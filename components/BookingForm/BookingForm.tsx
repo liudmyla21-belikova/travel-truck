@@ -101,7 +101,7 @@ export default function BookingForm({ camperId }: BookingFormProps) {
             value={formData.bookingDate}
             onChange={handleChange}
             required
-            min={new Date().toISOString().split('T')[0]} // Бронювання лише з сьогоднішнього дня
+            min={new Date().toISOString().split('T')[0]}
             className={css.inputField}
           />
         </div>

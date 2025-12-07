@@ -1,4 +1,3 @@
-// lib/store/filterStore.ts
 import { create } from "zustand";
 
 export type CamperForm = "panelTruck" | "fullyIntegrated" | "alcove" | "";

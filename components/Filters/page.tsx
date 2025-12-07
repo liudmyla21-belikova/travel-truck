@@ -46,7 +46,6 @@ export default function Filters({ onSearch }: { onSearch: () => void }) {
           <CustomCheckbox
             label="AC"
             icon="icon-wind"
-            // ✅ Забезпечуємо boolean
             checked={AC || false}
             onChange={(v: boolean) => setFilter('AC', v)}
           />

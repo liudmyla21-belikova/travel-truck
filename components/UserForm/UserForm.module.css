@@ -35,12 +35,32 @@
   padding: 18px;
   width: 100%;
   background-color: #f7f7f7;
-  border: none;
+  border: 1px solid #f7f7f7;
   outline: none;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: #6c717b;
+}
+
+.form > label > input:-webkit-autofill,
+.form > label > input:-webkit-autofill:hover,
+.form > label > input:-webkit-autofill:focus,
+.form > label > input:-webkit-autofill:active {
+  /* 1. Задаємо колір фону та тексту */
+  -webkit-box-shadow: 0 0 0 1000px #f7f7f7 inset !important; /* Фон */
+  -webkit-text-fill-color: #101828 !important; /* Колір тексту */
+
+  /* 2. Залишаємо кордони без змін */
+  border: 1px solid #f7f7f7 !important;
+}
+
+.form > label > input:focus,
+.form > label > textarea:focus,
+.dateInput:focus {
+  background-color: #f7f7f7;
+  box-shadow: none;
+  border: 1px solid #919499;
 }
 
 .comment {
