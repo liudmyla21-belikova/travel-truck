@@ -15,11 +15,16 @@ import { useFavouriteTrucksStore } from '@/lib/store/camperStore';
 import { CamperResponse } from '@/types/camper';
 
 const SPRITE_PATH = '/sprite.svg';
+const PAGE_LIMIT = 4;
 
 export default function Catalog() {
-  const [limit, setLimit] = useState<number>(4);
+  const [page, setPage] = useState(1);
+  const [items, setItems] = useState<CamperResponse['items']>([]);
+  const [isNewSearch, setIsNewSearch] = useState(false);
 
   const filterState = useFiltersStore((state) => state);
+  const { favourites, toggleFavourite } = useFavouriteTrucksStore();
+  const listRef = useRef<HTMLDivElement | null>(null);
 
   const camperFilters = {
     location: filterState.location,
@@ -32,54 +37,56 @@ export default function Catalog() {
     water: filterState.water,
   };
 
-  const { favourites, toggleFavourite } = useFavouriteTrucksStore();
-
-  const listRef = useRef<HTMLDivElement | null>(null);
-  const page = 1;
-
-  const { data: trucks, isPending } = useQuery<CamperResponse>({
-    queryKey: ['campers', camperFilters, limit],
-    queryFn: () => getCampers({ ...camperFilters, limit, page }),
+  const {
+    data: trucks,
+    isFetching,
+    isLoading,
+  } = useQuery<CamperResponse, Error>({
+    queryKey: ['campers', camperFilters, page],
+    queryFn: () => getCampers({ ...camperFilters, limit: PAGE_LIMIT, page }),
   });
 
-  const handleLoadMore = () => {
-    setLimit((prev) => prev + 4);
+  useEffect(() => {
+    if (!trucks) return;
+
+    if (page === 1 || isNewSearch) {
+      setItems(trucks.items);
+    } else {
+      setItems((prev) => [...prev, ...trucks.items]);
+    }
+    setIsNewSearch(false);
+  }, [trucks, page, isNewSearch]);
+  const handleLoadMore = () => setPage((prev) => prev + 1);
+
+  const handleSearch = () => {
+    setPage(1);
+    setIsNewSearch(true);
   };
 
-  // Прокрутка при догрузці
   useEffect(() => {
-    if (trucks?.items && trucks.items.length > 4) {
-      listRef.current?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-      });
+    if (isNewSearch && items.length > 0) {
+      listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsNewSearch(false);
     }
-  }, [limit]);
+  }, [items, isNewSearch]);
 
-  if (isPending) {
-    return (
-      <Container>
-        <Loader />
-      </Container>
-    );
-  }
-
-  const currentItemsCount = trucks?.items?.length || 0;
   const totalItems = trucks?.total || 0;
 
   return (
     <Container>
       <div className={css.catalogContainer}>
-        <Filters onSearch={handleLoadMore} />
+        <Filters onSearch={handleSearch} />
 
         <div className={css.catalogListContainer} ref={listRef}>
-          {currentItemsCount === 0 && (
+          {isLoading && page === 1 && <Loader />}
+
+          {!isLoading && items.length === 0 && (
             <NotFound message="На жаль, за вашими критеріями нічого не знайдено." />
           )}
 
-          {currentItemsCount > 0 && (
+          {items.length > 0 && (
             <ul className={css.trucksList}>
-              {trucks!.items.map((truck) => {
+              {items.map((truck) => {
                 const isSelected = favourites.some((fav) => fav.id === truck.id);
                 return (
                   <li key={truck.id} className={css.trucksItem}>
@@ -143,7 +150,6 @@ export default function Catalog() {
                             </span>
                           </div>
                         )}
-
                         {truck.engine && (
                           <div>
                             <svg width={20} height={20}>
@@ -152,7 +158,6 @@ export default function Catalog() {
                             <span>{truck.engine}</span>
                           </div>
                         )}
-
                         {truck.kitchen && (
                           <div>
                             <svg width={20} height={20}>
@@ -161,7 +166,6 @@ export default function Catalog() {
                             <span>Kitchen</span>
                           </div>
                         )}
-
                         {truck.TV && (
                           <div>
                             <svg width={20} height={20}>
@@ -170,7 +174,6 @@ export default function Catalog() {
                             <span>TV</span>
                           </div>
                         )}
-
                         {truck.bathroom && (
                           <div>
                             <svg width={20} height={20}>
@@ -179,7 +182,6 @@ export default function Catalog() {
                             <span>Bathroom</span>
                           </div>
                         )}
-
                         {truck.AC && (
                           <div>
                             <svg width={20} height={20}>
@@ -200,9 +202,9 @@ export default function Catalog() {
             </ul>
           )}
 
-          {totalItems > limit && (
-            <button className={css.catalogButton} onClick={handleLoadMore}>
-              Load more
+          {trucks && totalItems > items.length && (
+            <button className={css.catalogButton} onClick={handleLoadMore} disabled={isFetching}>
+              {isFetching ? 'Loading...' : 'Load more'}
             </button>
           )}
         </div>
