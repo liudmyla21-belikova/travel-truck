@@ -6,7 +6,6 @@ import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import css from './Catalog.module.css';
-import { Metadata } from 'next';
 import Loader from '@/components/Loader/Loader';
 import Filters from '@/components/Filters/page';
 import { useFiltersStore } from '@/lib/store/filterStore';
@@ -14,18 +13,6 @@ import NotFound from '@/components/NotFound/NotFound';
 import Link from 'next/link';
 import { useFavouriteTrucksStore } from '@/lib/store/camperStore';
 import { CamperResponse } from '@/types/camper';
-
-export const metadata: Metadata = {
-  title: 'Catalog | TravelTrucks',
-  description:
-    'Rent the best campers in Ukraine. Fully equipped, comfortable and ready for adventure.',
-
-  openGraph: {
-    title: 'Rent Your Dream Camper | TravelTrucks',
-    description: 'Find the perfect camper for your trip. AC, Kitchen, Shower & more!',
-    type: 'website',
-  },
-};
 
 const SPRITE_PATH = '/sprite.svg';
 const PAGE_LIMIT = 4;
