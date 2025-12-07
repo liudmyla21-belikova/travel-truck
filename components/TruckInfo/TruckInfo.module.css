@@ -1,0 +1,43 @@
+.detailsBox {
+  padding: 44px 52px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  width: 631px;
+}
+
+.camperFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+.camperFeatures > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f4f7;
+  border-radius: 100px;
+  padding: 12px 18px;
+  gap: 8px;
+}
+
+.subTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+}
+
+.list {
+  margin-top: 24px;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-top: 1px solid #dadde1;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+}

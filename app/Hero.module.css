@@ -1,0 +1,49 @@
+.hero {
+  height: 696px;
+  background-image: url('/Hero-banner.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero {
+    background-image: url('/Hero-banner@2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.heroContainer {
+  padding: 260px 0;
+}
+
+.heroTitle {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 0.67;
+  color: #f7f7f7;
+  margin-bottom: 16px;
+}
+
+.heroParagraph {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #f7f7f7;
+  margin-bottom: 40px;
+}
+
+.heroButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 200px;
+  padding: 16px 60px;
+  height: 56px;
+  background-color: #e44848;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #fff;
+}

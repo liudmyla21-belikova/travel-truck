@@ -1,0 +1,163 @@
+.filterContainer {
+  width: 360px;
+  height: 100%;
+}
+
+.location {
+  margin-bottom: 40px;
+}
+
+.location > label > div {
+  position: relative;
+}
+
+.location > label > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c717b;
+  margin-bottom: 8px;
+}
+
+.location > label > div > input {
+  width: 100%;
+  padding-left: 48px;
+  border-radius: 12px;
+  background-color: #f7f7f7;
+  height: 56px;
+  outline: none;
+  border: none;
+}
+
+.location > label > div > input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+}
+
+.location > label > div > svg {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+}
+
+.filterContainer > p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  margin-bottom: 32px;
+}
+
+.equipment {
+  margin-bottom: 32px;
+}
+
+.equipmentName {
+  border-bottom: 1px solid #dadde1;
+  padding-bottom: 24px;
+}
+
+.equipment > div > p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 24px 0;
+}
+
+.Gas,
+.Microwave,
+.Water {
+  stroke: black;
+  fill: transparent;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  padding: 16px 18px;
+  width: 112px;
+  height: 96px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #101828;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox:has(input:checked),
+.radio:has(input:checked) {
+  border: 1px solid #e44848;
+}
+
+.vehicleType {
+  border-bottom: 1px solid #dadde1;
+  padding-bottom: 24px;
+}
+
+.vehicleType > p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+}
+
+.radio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  padding: 16px 18px;
+  width: 112px;
+  height: 96px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #101828;
+}
+
+.radio input {
+  display: none;
+}
+
+.searchBtn {
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 166px;
+  height: 56px;
+  background-color: #e44848;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.searchBtn:hover {
+  background-color: #d84343;
+}

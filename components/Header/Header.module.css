@@ -1,0 +1,33 @@
+.header {
+  background-color: #f7f7f7;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  gap: 450px;
+  height: 72px;
+  border-bottom: 1px solid #f2f4f7;
+}
+
+.navigation {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.navigationItem {
+  padding: 24px 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+}
+
+.active {
+  padding: 24px 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #d84343;
+}

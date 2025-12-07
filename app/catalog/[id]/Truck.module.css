@@ -1,0 +1,135 @@
+.truckPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.truckInfo {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #dadde1;
+  padding: 48px 0 24px;
+  margin-bottom: 44px;
+  max-width: 1310px;
+  width: 100%;
+}
+
+.truckName {
+  display: flex;
+  flex-direction: column;
+}
+
+.truckName > h3 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3;
+  color: #101828;
+}
+
+.truckPrice {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3;
+  color: #101828;
+  display: flex;
+  gap: 12px;
+}
+
+.truckLocation {
+  display: flex;
+  gap: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  margin: 8px 0 16px;
+}
+
+.truckRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: underline;
+}
+
+.truckCity {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.starIcon,
+.locationIcon {
+  color: #ffc531;
+  fill: #ffc531;
+}
+
+.information {
+  display: flex;
+  gap: 40px;
+  padding-bottom: 80px;
+  width: 100%;
+  max-width: 1310px;
+  align-items: flex-start;
+}
+
+.tabContent {
+  flex-basis: 60%;
+  flex-shrink: 0;
+}
+
+.information > div:last-child {
+  flex-basis: 40%;
+  flex-shrink: 0;
+}
+
+.gallery {
+  display: flex;
+  gap: 48px;
+  padding: 28px 0;
+  list-style: none;
+  margin: 0;
+}
+
+.galleryItem {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.truckInfo > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  margin-bottom: 60px;
+}
+
+.boxBtn {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+.active::before {
+  content: '';
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 5px;
+  background-color: #e44848;
+  position: absolute;
+}
