@@ -13,7 +13,7 @@ management, and **Axios** for API interaction.
 
 | Category        | Link                                                           | Notes                                                                       |
 | :-------------- | :------------------------------------------------------------- | :-------------------------------------------------------------------------- |
-| **Live Demo**   | [Live site on Vercel](https://travel-truck-liard.vercel.app)   |                                                                             |
+| **Live Demo**   | [Live site on Vercel](https://travel-truck-liard.vercel.app/)  |                                                                             |
 | **Backend API** | [MockAPI](https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers) | Supports `GET /campers` (with filtering/pagination) and `GET /campers/:id`. |
 
 ## 🚀 Key Features & Pages
@@ -24,7 +24,6 @@ management, and **Axios** for API interaction.
 | **Catalog (`/catalog`)**     | **Backend Filtering** by: **Location** (text), **Camper Type** (single selection), and **Features** (multi-select: AC, Kitchen, TV, etc.). Uses "Load More" button for **Backend Pagination**. |
 | **Details (`/catalog/:id`)** | Detailed information, image gallery, and tabs for **Features** (transmission, engine, AC, etc.) and **Reviews**.                                                                               |
 | **Booking Form**             | Integrated form on the details page with a success notification upon submission.                                                                                                               |
-| **Favorites (`/favorites`)** | Persistent list of user-selected campers (persists across page reloads).                                                                                                                       |
 
 ## ⚙️ Technologies Used
 
@@ -32,7 +31,7 @@ management, and **Axios** for API interaction.
 - **Language:** TypeScript
 - **State Management:** **Zustand** (for filters and favorites)
 - **HTTP Client:** Axios
-- **Styling:** (Specify your styling library: CSS Modules / Styled Components / etc.)
+- **Styling:** (CSS Modules)
 
 ## 🧠 State Management & Core Logic
 
