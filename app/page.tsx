@@ -1,6 +1,19 @@
 import Link from 'next/link';
 import css from './Hero.module.css';
+import { Metadata } from 'next';
 import Container from '@/components/Container/page';
+
+export const metadata: Metadata = {
+  title: 'Catalog | TravelTrucks',
+  description:
+    'Rent the best campers in Ukraine. Fully equipped, comfortable and ready for adventure.',
+
+  openGraph: {
+    title: 'Rent Your Dream Camper | TravelTrucks',
+    description: 'Find the perfect camper for your trip. AC, Kitchen, Shower & more!',
+    type: 'website',
+  },
+};
 
 export default function HomePage() {
   return (

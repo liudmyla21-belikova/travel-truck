@@ -11,10 +11,10 @@ management, and **Axios** for API interaction.
 
 ## 🔗 Live Demo & API
 
-| Category        | Link                                                               | Notes                                                                       |
-| :-------------- | :----------------------------------------------------------------- | :-------------------------------------------------------------------------- |
-| **Live Demo**   | [Live site on Vercel](https://travel-truck-liard.vercel.app/.app/) |                                                                             |
-| **Backend API** | [MockAPI](https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers)     | Supports `GET /campers` (with filtering/pagination) and `GET /campers/:id`. |
+| Category        | Link                                                           | Notes                                                                       |
+| :-------------- | :------------------------------------------------------------- | :-------------------------------------------------------------------------- |
+| **Live Demo**   | [Live site on Vercel](https://travel-truck-liard.vercel.app)   |                                                                             |
+| **Backend API** | [MockAPI](https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers) | Supports `GET /campers` (with filtering/pagination) and `GET /campers/:id`. |
 
 ## 🚀 Key Features & Pages
 
