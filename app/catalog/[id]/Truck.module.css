@@ -27,7 +27,7 @@
   color: #101828;
 }
 
-.truckPrice {
+.camperPrice {
   font-weight: 600;
   font-size: 24px;
   line-height: 1.3;
@@ -55,14 +55,17 @@
 
 .truckCity {
   display: flex;
-  gap: 4px;
+  gap: 10px;
   align-items: center;
 }
 
-.starIcon,
-.locationIcon {
+.starIcon {
   color: #ffc531;
   fill: #ffc531;
+}
+
+.locationIcon {
+  margin-right: 4px;
 }
 
 .information {

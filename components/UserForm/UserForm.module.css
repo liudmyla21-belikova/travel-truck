@@ -70,3 +70,14 @@
   height: 56px;
   margin: 0 auto;
 }
+
+.successNotification {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #4caf50;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+}
