@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import { Camper, CamperForm } from '@/types/camper';
 
 
@@ -64,15 +65,22 @@ interface FavouritesState {
   toggleFavourite: (truck: Camper) => void;
 }
 
-export const useFavouriteTrucksStore = create<FavouritesState>((set) => ({
-  favourites: [],
-
-  toggleFavourite: (truck) =>
-    set((state) => {
-      const exists = state.favourites.some((item) => item.id === truck.id);
-
-      return exists
-        ? { favourites: state.favourites.filter((item) => item.id !== truck.id) } 
-        : { favourites: [...state.favourites, truck] };
-    }),
-}));
+export const useFavouriteTrucksStore = create<FavouritesState>()(
+    persist(
+        (set) => ({
+            favourites: [],
+        
+            toggleFavourite: (truck) =>
+                set((state) => {
+                    const exists = state.favourites.some((item) => item.id === truck.id);
+        
+                    return exists
+                        ? { favourites: state.favourites.filter((item) => item.id !== truck.id) } 
+                        : { favourites: [...state.favourites, truck] };
+                }),
+        }),
+        {
+            name: 'camper-favourites-truck-storage',
+            }
+    )
+);
