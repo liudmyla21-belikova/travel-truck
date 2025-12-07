@@ -25,8 +25,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable}`}>
         <TanStackProvider>
-          <main>
-            <Header />
+           <Header />
+           <main>
             {children}
           </main>
         </TanStackProvider>
